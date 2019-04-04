@@ -1,0 +1,10 @@
+C:\Users\Juan\Desktop\TPWinForm\TPWinForm\bin\Debug\TPWinForm.exe.config
+C:\Users\Juan\Desktop\TPWinForm\TPWinForm\bin\Debug\TPWinForm.exe
+C:\Users\Juan\Desktop\TPWinForm\TPWinForm\bin\Debug\TPWinForm.pdb
+C:\Users\Juan\Desktop\TPWinForm\TPWinForm\obj\Debug\TPWinForm.csprojAssemblyReference.cache
+C:\Users\Juan\Desktop\TPWinForm\TPWinForm\obj\Debug\TPWinForm.Form1.resources
+C:\Users\Juan\Desktop\TPWinForm\TPWinForm\obj\Debug\TPWinForm.Properties.Resources.resources
+C:\Users\Juan\Desktop\TPWinForm\TPWinForm\obj\Debug\TPWinForm.csproj.GenerateResource.cache
+C:\Users\Juan\Desktop\TPWinForm\TPWinForm\obj\Debug\TPWinForm.csproj.CoreCompileInputs.cache
+C:\Users\Juan\Desktop\TPWinForm\TPWinForm\obj\Debug\TPWinForm.exe
+C:\Users\Juan\Desktop\TPWinForm\TPWinForm\obj\Debug\TPWinForm.pdb
