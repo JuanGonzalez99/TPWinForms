@@ -1,6 +1,6 @@
 ﻿namespace TPWinForm
 {
-    partial class Form1
+    partial class frmPersonas
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -278,7 +278,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(396, 400);
             this.dataGridView1.TabIndex = 13;
             // 
-            // Form1
+            // frmPersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -297,8 +297,8 @@
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.gboSexo);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmPersonas";
+            this.Text = "Personas";
             this.gboSexo.ResumeLayout(false);
             this.gboSexo.PerformLayout();
             this.groupBox1.ResumeLayout(false);

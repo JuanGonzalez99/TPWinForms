@@ -1,6 +1,6 @@
 ﻿namespace TPWinForm
 {
-    partial class Form2
+    partial class frmPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,63 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mnsMenu = new System.Windows.Forms.MenuStrip();
             this.listadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.objetosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.jajaTeLaCreisteWeXdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // mnsMenu
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listadosToolStripMenuItem,
             this.ayudaToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mnsMenu.Location = new System.Drawing.Point(0, 0);
+            this.mnsMenu.Name = "mnsMenu";
+            this.mnsMenu.Size = new System.Drawing.Size(884, 24);
+            this.mnsMenu.TabIndex = 1;
+            this.mnsMenu.Text = "mnsMenu";
             // 
             // listadosToolStripMenuItem
             // 
             this.listadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aToolStripMenuItem,
+            this.personasToolStripMenuItem,
             this.objetosToolStripMenuItem});
             this.listadosToolStripMenuItem.Name = "listadosToolStripMenuItem";
             this.listadosToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.listadosToolStripMenuItem.Text = "Listados";
             // 
-            // aToolStripMenuItem
+            // personasToolStripMenuItem
             // 
-            this.aToolStripMenuItem.Name = "aToolStripMenuItem";
-            this.aToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aToolStripMenuItem.Text = "Personas";
+            this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
+            this.personasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.personasToolStripMenuItem.Text = "Personas";
+            this.personasToolStripMenuItem.Click += new System.EventHandler(this.personasToolStripMenuItem_Click);
             // 
             // objetosToolStripMenuItem
             // 
             this.objetosToolStripMenuItem.Name = "objetosToolStripMenuItem";
             this.objetosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.objetosToolStripMenuItem.Text = "Objetos";
+            this.objetosToolStripMenuItem.Click += new System.EventHandler(this.objetosToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
+            this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.jajaTeLaCreisteWeXdToolStripMenuItem});
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
-            // Form2
+            // jajaTeLaCreisteWeXdToolStripMenuItem
+            // 
+            this.jajaTeLaCreisteWeXdToolStripMenuItem.Name = "jajaTeLaCreisteWeXdToolStripMenuItem";
+            this.jajaTeLaCreisteWeXdToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.jajaTeLaCreisteWeXdToolStripMenuItem.Text = "Jaja te la creiste we xd";
+            // 
+            // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form2";
-            this.Text = "Form2";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.mnsMenu);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.mnsMenu;
+            this.Name = "frmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "frmPrincipal";
+            this.mnsMenu.ResumeLayout(false);
+            this.mnsMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,10 +105,11 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip mnsMenu;
         private System.Windows.Forms.ToolStripMenuItem listadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem personasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem objetosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem jajaTeLaCreisteWeXdToolStripMenuItem;
     }
 }
