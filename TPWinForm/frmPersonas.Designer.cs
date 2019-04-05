@@ -274,11 +274,20 @@
             // 
             // dgvPersonas
             // 
+            this.dgvPersonas.AllowUserToAddRows = false;
+            this.dgvPersonas.AllowUserToDeleteRows = false;
+            this.dgvPersonas.AllowUserToResizeColumns = false;
+            this.dgvPersonas.AllowUserToResizeRows = false;
             this.dgvPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersonas.Location = new System.Drawing.Point(382, 24);
+            this.dgvPersonas.MultiSelect = false;
             this.dgvPersonas.Name = "dgvPersonas";
+            this.dgvPersonas.ReadOnly = true;
+            this.dgvPersonas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvPersonas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPersonas.Size = new System.Drawing.Size(550, 324);
             this.dgvPersonas.TabIndex = 13;
+            this.dgvPersonas.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPersonas_RowHeaderMouseClick);
             // 
             // btnModificar
             // 

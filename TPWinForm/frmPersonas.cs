@@ -70,13 +70,8 @@ namespace TPWinForm
             limpiarDatos();
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void dgvPersonas_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if(dgvPersonas.CurrentRow == null)
-            {
-                MessageBox.Show("No ha seleccionado ningún registro", "Advertencia");
-                return;
-            }
             Object seleccionado = dgvPersonas.CurrentRow.DataBoundItem;
             Persona personaSeleccionada = (Persona)seleccionado;
             txtNombre.Text = personaSeleccionada.Nombre;
@@ -91,6 +86,39 @@ namespace TPWinForm
             chbCumbia.Checked = personaSeleccionada.GenerosFavoritos[4];
             chbTango.Checked = personaSeleccionada.GenerosFavoritos[5];
             cboColor.SelectedIndex = Color(personaSeleccionada.ColorFavorito);
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if(dgvPersonas.CurrentRow == null)
+            {
+                MessageBox.Show("No ha seleccionado ningún registro", "Advertencia");
+                return;
+            }
+            if (txtNombre.Text.Trim() == "" || txtApellido.Text.Trim() == "" || cboColor.SelectedIndex < 0)
+            {
+                MessageBox.Show("Complete todos los campos!");
+                return;
+            }
+            Object seleccionado = dgvPersonas.CurrentRow.DataBoundItem;
+            Persona persona = (Persona)seleccionado;
+            //listadoPersonas.Remove(persona);
+
+            persona.Nombre = txtNombre.Text;
+            persona.Apellido = txtApellido.Text;
+            if (rbtnMasculino.Checked) persona.Sexo = 'M';
+            if (rbtnFemenino.Checked) persona.Sexo = 'F';
+            if (rbtnOtro.Checked) persona.Sexo = 'O';
+            persona.FechaNacimiento = dtpNacimiento.Value;
+            persona.GenerosFavoritos[0] = chbClasica.Checked;
+            persona.GenerosFavoritos[1] = chbRock.Checked;
+            persona.GenerosFavoritos[2] = chbRap.Checked;
+            persona.GenerosFavoritos[3] = chbJazz.Checked;
+            persona.GenerosFavoritos[4] = chbCumbia.Checked;
+            persona.GenerosFavoritos[5] = chbTango.Checked;
+            persona.ColorFavorito = Color(cboColor.SelectedIndex);
+            limpiarDatos();
+            listaBindeable.ResetBindings();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -114,11 +142,11 @@ namespace TPWinForm
         private int EdadPersona(DateTime FechaNacimiento)
         {
             int edad = DateTime.Now.Year - FechaNacimiento.Year;
-            if (DateTime.Now.Month < FechaNacimiento.Month)
+            if (FechaNacimiento.Month > DateTime.Now.Month)
             {
                 edad--;
             }
-            else if (DateTime.Now.Day < FechaNacimiento.Day)
+            else if (FechaNacimiento.Day > DateTime.Now.Day && FechaNacimiento.Month == DateTime.Now.Month )
             {
                 edad--;
             }
@@ -167,6 +195,5 @@ namespace TPWinForm
             chbTango.Checked = false;
             cboColor.SelectedIndex = -1;
         }
-
     }
 }
