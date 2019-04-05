@@ -61,26 +61,45 @@ namespace TPWinForm
             persona.GenerosFavoritos[5] = chbTango.Checked;
             persona.ColorFavorito = Color(cboColor.SelectedIndex);
             listadoPersonas.Add(persona);
+            limpiarDatos();
             listaBindeable.ResetBindings();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            txtNombre.Text = "";
-            txtApellido.Text = "";
-            rbtnMasculino.Checked = true;
-            dtpNacimiento.Value = DateTime.Now;
-            chbClasica.Checked = false;
-            chbCumbia.Checked = false;
-            chbJazz.Checked = false;
-            chbRap.Checked = false;
-            chbRock.Checked = false;
-            chbTango.Checked = false;
-            cboColor.SelectedIndex = -1;
+            limpiarDatos();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if(dgvPersonas.CurrentRow == null)
+            {
+                MessageBox.Show("No ha seleccionado ningún registro", "Advertencia");
+                return;
+            }
+            Object seleccionado = dgvPersonas.CurrentRow.DataBoundItem;
+            Persona personaSeleccionada = (Persona)seleccionado;
+            txtNombre.Text = personaSeleccionada.Nombre;
+            txtApellido.Text = personaSeleccionada.Apellido;
+            if (personaSeleccionada.Sexo == 'M') rbtnMasculino.Checked = true;
+            if (personaSeleccionada.Sexo == 'F') rbtnFemenino.Checked = true;
+            if (personaSeleccionada.Sexo == 'O') rbtnOtro.Checked = true;
+            chbClasica.Checked = personaSeleccionada.GenerosFavoritos[0];
+            chbRock.Checked = personaSeleccionada.GenerosFavoritos[1];
+            chbRap.Checked = personaSeleccionada.GenerosFavoritos[2];
+            chbJazz.Checked = personaSeleccionada.GenerosFavoritos[3];
+            chbCumbia.Checked = personaSeleccionada.GenerosFavoritos[4];
+            chbTango.Checked = personaSeleccionada.GenerosFavoritos[5];
+            cboColor.SelectedIndex = Color(personaSeleccionada.ColorFavorito);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (dgvPersonas.CurrentRow == null)
+            {
+                MessageBox.Show("No ha seleccionado ningún registro", "Advertencia");
+                return;
+            }
             if (MessageBox.Show("Está seguro que desea eliminar este registro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 return;
@@ -120,6 +139,33 @@ namespace TPWinForm
                 case 4: return "Violeta";
                 default: return "";
             }
+        }
+        private int Color(string color)
+        {
+            switch(color)
+            {
+                case "Rojo": return 0;
+                case "Azul": return 1;
+                case "Amarillo": return 2;
+                case "Verde": return 3;
+                case "Violeta": return 4;
+                default: return 0;
+            }
+        }
+
+        private void limpiarDatos()
+        {
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            rbtnMasculino.Checked = true;
+            dtpNacimiento.Value = DateTime.Now;
+            chbClasica.Checked = false;
+            chbCumbia.Checked = false;
+            chbJazz.Checked = false;
+            chbRap.Checked = false;
+            chbRock.Checked = false;
+            chbTango.Checked = false;
+            cboColor.SelectedIndex = -1;
         }
 
     }
