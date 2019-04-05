@@ -79,6 +79,18 @@ namespace TPWinForm
             cboColor.SelectedIndex = -1;
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Está seguro que desea eliminar este registro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
+            Object seleccionado = dgvPersonas.CurrentRow.DataBoundItem;
+            Persona personaSeleccionada = (Persona)seleccionado;
+            listadoPersonas.Remove(personaSeleccionada);
+            listaBindeable.ResetBindings();
+        }
+
         //Métodos auxiliares
         private int EdadPersona(DateTime FechaNacimiento)
         {
