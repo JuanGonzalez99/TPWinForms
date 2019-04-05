@@ -10,6 +10,14 @@ namespace TPWinForm
     {
         public string Apellido { get; set; }
         public string Nombre { get; set; }
-
+        public DateTime FechaNacimiento { get; set; }
+        public char Sexo { get; set; }
+        public bool[] GenerosFavoritos { get; set; }
+        public string ColorFavorito { get; set; }
+        
+        public Persona()
+        {
+            GenerosFavoritos = new bool[6];
+        }
     }
 }

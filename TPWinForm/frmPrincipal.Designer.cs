@@ -44,7 +44,7 @@
             this.ayudaToolStripMenuItem});
             this.mnsMenu.Location = new System.Drawing.Point(0, 0);
             this.mnsMenu.Name = "mnsMenu";
-            this.mnsMenu.Size = new System.Drawing.Size(884, 24);
+            this.mnsMenu.Size = new System.Drawing.Size(964, 24);
             this.mnsMenu.TabIndex = 1;
             this.mnsMenu.Text = "mnsMenu";
             // 
@@ -60,14 +60,14 @@
             // personasToolStripMenuItem
             // 
             this.personasToolStripMenuItem.Name = "personasToolStripMenuItem";
-            this.personasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.personasToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.personasToolStripMenuItem.Text = "Personas";
             this.personasToolStripMenuItem.Click += new System.EventHandler(this.personasToolStripMenuItem_Click);
             // 
             // objetosToolStripMenuItem
             // 
             this.objetosToolStripMenuItem.Name = "objetosToolStripMenuItem";
-            this.objetosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.objetosToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.objetosToolStripMenuItem.Text = "Objetos";
             this.objetosToolStripMenuItem.Click += new System.EventHandler(this.objetosToolStripMenuItem_Click);
             // 
@@ -89,13 +89,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(964, 561);
             this.Controls.Add(this.mnsMenu);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mnsMenu;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPrincipal";
+            this.Text = "Súper Aplicación v210";
             this.mnsMenu.ResumeLayout(false);
             this.mnsMenu.PerformLayout();
             this.ResumeLayout(false);

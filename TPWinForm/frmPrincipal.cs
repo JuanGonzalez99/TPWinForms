@@ -19,6 +19,15 @@ namespace TPWinForm
 
         private void personasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(frmPersonas))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
             frmPersonas ventana = new frmPersonas();
             ventana.MdiParent = this;
             ventana.Show();
@@ -26,6 +35,15 @@ namespace TPWinForm
 
         private void objetosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(frmObjetos))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
             frmObjetos ventana = new frmObjetos();
             ventana.MdiParent = this;
             ventana.Show();

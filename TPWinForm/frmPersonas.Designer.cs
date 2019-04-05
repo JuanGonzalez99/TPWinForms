@@ -39,7 +39,7 @@
             this.lblNacimiento = new System.Windows.Forms.Label();
             this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
             this.lblEdad = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gboMusica = new System.Windows.Forms.GroupBox();
             this.chbTango = new System.Windows.Forms.CheckBox();
             this.chbCumbia = new System.Windows.Forms.CheckBox();
             this.chbJazz = new System.Windows.Forms.CheckBox();
@@ -50,15 +50,16 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cboColor = new System.Windows.Forms.ComboBox();
             this.lblColor = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvPersonas = new System.Windows.Forms.DataGridView();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.gboSexo.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gboMusica.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).BeginInit();
             this.SuspendLayout();
             // 
             // gboSexo
             // 
-            this.gboSexo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gboSexo.Controls.Add(this.rbtnOtro);
             this.gboSexo.Controls.Add(this.rbtnFemenino);
             this.gboSexo.Controls.Add(this.rbtnMasculino);
@@ -156,24 +157,23 @@
             this.lblEdad.AutoSize = true;
             this.lblEdad.Location = new System.Drawing.Point(291, 160);
             this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(35, 13);
+            this.lblEdad.Size = new System.Drawing.Size(0, 13);
             this.lblEdad.TabIndex = 7;
-            this.lblEdad.Text = "Edad:";
             // 
-            // groupBox1
+            // gboMusica
             // 
-            this.groupBox1.Controls.Add(this.chbTango);
-            this.groupBox1.Controls.Add(this.chbCumbia);
-            this.groupBox1.Controls.Add(this.chbJazz);
-            this.groupBox1.Controls.Add(this.chbRap);
-            this.groupBox1.Controls.Add(this.chbRock);
-            this.groupBox1.Controls.Add(this.chbClasica);
-            this.groupBox1.Location = new System.Drawing.Point(22, 202);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(338, 88);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Música favorita";
+            this.gboMusica.Controls.Add(this.chbTango);
+            this.gboMusica.Controls.Add(this.chbCumbia);
+            this.gboMusica.Controls.Add(this.chbJazz);
+            this.gboMusica.Controls.Add(this.chbRap);
+            this.gboMusica.Controls.Add(this.chbRock);
+            this.gboMusica.Controls.Add(this.chbClasica);
+            this.gboMusica.Location = new System.Drawing.Point(22, 202);
+            this.gboMusica.Name = "gboMusica";
+            this.gboMusica.Size = new System.Drawing.Size(338, 88);
+            this.gboMusica.TabIndex = 8;
+            this.gboMusica.TabStop = false;
+            this.gboMusica.Text = "Música favorita";
             // 
             // chbTango
             // 
@@ -237,21 +237,23 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(22, 389);
+            this.btnAceptar.Location = new System.Drawing.Point(40, 378);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(124, 35);
             this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(236, 389);
+            this.btnCancelar.Location = new System.Drawing.Point(221, 378);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(124, 35);
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // cboColor
             // 
@@ -260,7 +262,6 @@
             this.cboColor.Name = "cboColor";
             this.cboColor.Size = new System.Drawing.Size(122, 21);
             this.cboColor.TabIndex = 11;
-            this.cboColor.Text = "Elija un color";
             // 
             // lblColor
             // 
@@ -271,25 +272,45 @@
             this.lblColor.TabIndex = 12;
             this.lblColor.Text = "Color favorito:";
             // 
-            // dataGridView1
+            // dgvPersonas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(382, 24);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(396, 400);
-            this.dataGridView1.TabIndex = 13;
+            this.dgvPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPersonas.Location = new System.Drawing.Point(382, 24);
+            this.dgvPersonas.Name = "dgvPersonas";
+            this.dgvPersonas.Size = new System.Drawing.Size(550, 324);
+            this.dgvPersonas.TabIndex = 13;
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(450, 378);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(124, 35);
+            this.btnModificar.TabIndex = 14;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(670, 378);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(124, 35);
+            this.btnEliminar.TabIndex = 15;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // frmPersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 437);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(944, 437);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.dgvPersonas);
             this.Controls.Add(this.lblColor);
             this.Controls.Add(this.cboColor);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gboMusica);
             this.Controls.Add(this.lblEdad);
             this.Controls.Add(this.dtpNacimiento);
             this.Controls.Add(this.lblNacimiento);
@@ -303,9 +324,9 @@
             this.Load += new System.EventHandler(this.frmPersonas_Load);
             this.gboSexo.ResumeLayout(false);
             this.gboSexo.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.gboMusica.ResumeLayout(false);
+            this.gboMusica.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,7 +345,7 @@
         private System.Windows.Forms.Label lblNacimiento;
         private System.Windows.Forms.DateTimePicker dtpNacimiento;
         private System.Windows.Forms.Label lblEdad;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gboMusica;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cboColor;
@@ -335,7 +356,9 @@
         private System.Windows.Forms.CheckBox chbRap;
         private System.Windows.Forms.CheckBox chbRock;
         private System.Windows.Forms.CheckBox chbClasica;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPersonas;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
 
