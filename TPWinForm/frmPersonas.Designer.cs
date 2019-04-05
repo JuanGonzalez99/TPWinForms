@@ -149,6 +149,7 @@
             this.dtpNacimiento.Name = "dtpNacimiento";
             this.dtpNacimiento.Size = new System.Drawing.Size(197, 20);
             this.dtpNacimiento.TabIndex = 6;
+            this.dtpNacimiento.ValueChanged += new System.EventHandler(this.dtpNacimiento_ValueChanged);
             // 
             // lblEdad
             // 
@@ -299,6 +300,7 @@
             this.Controls.Add(this.gboSexo);
             this.Name = "frmPersonas";
             this.Text = "Personas";
+            this.Load += new System.EventHandler(this.frmPersonas_Load);
             this.gboSexo.ResumeLayout(false);
             this.gboSexo.PerformLayout();
             this.groupBox1.ResumeLayout(false);
